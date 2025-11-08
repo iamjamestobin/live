@@ -215,9 +215,11 @@
 <body>
   <div class="tv-on"></div>
 
-  <video id="bgVideo" autoplay muted loop playsinline preload="auto">
-    <source src="" type="video/mp4" />
-  </video>
+ <video id="bgVideo"
+       autoplay muted loop playsinline preload="auto"
+       style="display:none;">
+  <source src="" type="video/mp4" />
+</video>
 
   <div class="controls" id="sliderControls" style="display: none;">
     <input type="range" id="sentenceSlider" min="0" max="9" value="0" step="1" />
