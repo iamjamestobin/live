@@ -553,23 +553,33 @@ const sentences = [
 
     // Overlay open/close logic with pause/resume
 
-    const logo = document.getElementById('logoContainer');
+      const logo = document.getElementById('logoContainer');
 
+    // CLICK to open overlay
     logo.addEventListener('click', () => {
-  playNote(noteFrequencies[9], 1000);  // Play C4 note on click (500ms duration)
-  overlay.style.display = 'flex';
-  overlayActive = true;
-  isPlaying = false;
-  clearTimeout(autoAdvanceTimeout);
-});
+      playNote(noteFrequencies[9], 1000);  // Play C4 note on click
+      overlay.style.display = 'flex';
+      overlayActive = true;
+      isPlaying = false;
+      clearTimeout(autoAdvanceTimeout);
+    });
 
+    // KEYBOARD accessibility: Enter or Space should also open overlay
+    logo.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        logo.click();   // Trigger the same logic as a mouse click
+      }
+    });
+
+    // CLICK anywhere on overlay to close
     overlay.addEventListener('click', () => {
       overlay.style.display = 'none';
       overlayActive = false;
       isPlaying = true;
       showSentence(currentIndex);
     });
-  </script>
+</script>
 
 <script>
   // Track touch start & end coordinates for swipe detection
