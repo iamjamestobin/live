@@ -245,9 +245,14 @@
     <input type="range" id="sentenceSlider" min="0" max="9" value="0" step="1" />
   </div>
 
-  <div class="logo-top-right" id="logoContainer">
-    <img src="images/logo.png" alt="Logo" />
-  </div>
+<div class="logo-top-right"
+     id="logoContainer"
+     role="button"
+     tabindex="0"
+     aria-label="Open contact overlay">
+  <img src="images/logo.png" alt="" aria-hidden="true">
+</div>
+  
 <!-- Fullscreen image overlay -->
 <div id="imageOverlay" style="
   display: none;
