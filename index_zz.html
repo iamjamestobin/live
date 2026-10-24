@@ -211,7 +211,7 @@
     }
     #archiveList {
       z-index: 10002;
-      background: rgba(0, 0, 0, 0.97);
+      background: #000;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -232,12 +232,6 @@
     .arc-btn:focus-visible, #archiveList a:focus-visible {
       outline: 1px solid #ffffe0;
       outline-offset: 3px;
-    }
-    #archiveList .arc-back {
-      position: absolute;
-      top: calc(12px + env(safe-area-inset-top));
-      left: calc(12px + env(safe-area-inset-left));
-      font-size: 1.25rem;
     }
     #archiveList ol {
       list-style: none;
@@ -265,7 +259,11 @@
       font-size: 1.1rem;
     }
     .arc-bar .arc-btn { padding: 0.5rem 0.75rem; }
-    #archiveLabel { opacity: 0.6; padding-right: 0.75rem; }
+    #archiveList .arc-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+    }
+    #archiveLabel, #archiveListLabel { opacity: 0.6; padding-right: 0.75rem; font-size: 1.15rem; }
     #archiveFrame {
       flex: 1 1 auto;
       width: 100%;
@@ -447,7 +445,10 @@
 </script>
 
 <div id="archiveList" role="dialog" aria-modal="true" aria-label="Archive">
-  <button type="button" class="arc-btn arc-back" id="archiveListBack">← camalyn.</button>
+  <div class="arc-bar">
+    <button type="button" class="arc-btn" id="archiveListBack">← camalyn.</button>
+    <span id="archiveListLabel">archive</span>
+  </div>
   <ol>
     <li class="arc-dim"><span class="arc-num">i.</span><span aria-label="not available">…</span></li>
     <li class="arc-dim"><span class="arc-num">ii.</span><span aria-label="not available">…</span></li>
