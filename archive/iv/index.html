@@ -1,1 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camalyn</title>
+  <meta name="description" content="Camalyn – IT headhunting, recruitment and professional services.">
+  <meta name="theme-color" content="#000000">
+  <meta name="google-site-verification" content="ewRu2S98F4VynnKmXEawUZ7J3GBqRVrpeCb90MNIEwg">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=11">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    /* Case study filter (pill buttons). Hidden unless JS is running. */
+    .filters{display:none;gap:.75rem;margin:1.25rem 0 2rem;padding-bottom:.25rem;overflow-x:auto;scrollbar-width:none}
+    .filters::-webkit-scrollbar{display:none}
+    .js .filters{display:flex}
+    .filters button{flex:0 0 auto;display:inline-flex;align-items:baseline;gap:.5rem;padding:.65rem 1.5rem;font:inherit;font-size:1rem;line-height:1.4;color:#fff;background:transparent;border:1px solid #666;border-radius:999px;cursor:pointer;-webkit-appearance:none;appearance:none;transition:background-color .2s,color .2s,border-color .2s}
+    .filters button:hover{border-color:#fff}
+    .filters button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+    .filters button[aria-pressed="true"]{color:#000;background:#fff;border-color:#fff}
+    .card[hidden]{display:none}
+    .card.is-entering{animation:card-in .35s ease both}
+    @keyframes card-in{from{opacity:0;transform:translateY(8px)}}
+    /* Redacted contact details (placeholder text only - real values are not in the HTML) */
+    .redacted span{filter:blur(5px);-webkit-user-select:none;user-select:none;pointer-events:none;display:inline-block}
+    .archive-note{font-size:.8rem;color:#888;margin-top:1.25rem}
+    .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (min-width:600px){.filters{flex-wrap:wrap;overflow:visible}}
+    @media (prefers-reduced-motion:reduce){.filters button{transition:none}.card.is-entering{animation:none}}
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero: logo sits in the exact centre of the screen -->
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <img class="hero-logo" src="img/largesplashlogo.png" alt="Camalyn" width="598" height="152">
+    </div>
+    <a class="scroll-cue" href="#headhunting" aria-label="Scroll to content"></a>
+  </header>
+
+  <nav class="site-nav" id="main-nav" aria-label="Main">
+    <div class="container">
+      <a href="#headhunting">Headhunting</a>
+      <a href="#professionalservices">Professional Services</a>
+      <a class="nav-cta" href="#getintouch">Get in touch</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===================== HEADHUNTING ===================== -->
+    <section id="headhunting">
+
+      <div class="photo-bar pathway">
+        <div class="container">
+          <div class="photo-text"><span class="text-black-bg">we combine research</span><br><span class="text-black-bg">with relationships</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="container">
+          <h1>Headhunting</h1>
+          <p>It is through the comprehensive relationships we maintain, combined with the research we conduct, that we are able to headhunt for senior, key and instrumental IT jobs</p>
+        </div>
+      </div>
+
+      <div id="recruitmentprocess">
+        <div class="photo-bar about-disciplines">
+          <div class="container">
+            <div class="photo-text"><span class="text-black-bg">we partner with our customers</span><br><span class="text-black-bg">rather than just supply</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="container">
+            <h1>Our Process</h1>
+            <p>We run the whole search: pinning down the role, finding the right people, screening them and putting a shortlist in front of you.</p>
+            <ol class="steps">
+              <li>
+                <h3>Discovery</h3>
+                <span class="italic">Uncovering purpose</span>
+                <p>We start with one question: what do you want this hire to achieve? Your answer shapes the brief, and it's how we get to know the role well enough to find the right person.</p>
+              </li>
+              <li>
+                <h3>Define</h3>
+                <span class="italic">Defining scope</span>
+                <p>We look at your goals, challenges and business, then propose a plan: which markets to approach, how long it should take and how interviews will run. You get options, and together we agree the scope, the schedule and what success looks like.</p>
+              </li>
+              <li>
+                <h3>Presentation</h3>
+                <span class="italic">Presenting the shortlist</span>
+                <p>When our networking, interviewing and selection are done, you get a short list of strong candidates. Every one of them fits the brief and has a track record of adding value.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div id="recruitmentcasestudies">
+        <div class="photo-bar storytellers">
+          <div class="container">
+            <div class="photo-text"><span class="text-black-bg">we have faith in our future,</span><br><span class="text-black-bg">as a consequence of our past</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="container">
+            <h1>Some of the things we've done</h1>
+            <div class="filters" id="case-filters" role="group" aria-label="Filter case studies by location">
+              <button type="button" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-filter="london" aria-pressed="false">London</button>
+              <button type="button" data-filter="europe" aria-pressed="false">Europe</button>
+              <button type="button" data-filter="apac" aria-pressed="false">Asia-Pacific</button>
+            </div>
+            <p class="sr-only" id="case-filter-status" aria-live="polite"></p>
+            <div class="cards">
+              <div class="card" data-places="europe">
+                <h4>Country Security Manager</h4>
+                <span class="italic">Zurich</span>
+                <p>An American investment bank trusted us with the search for its Swiss Security Manager.</p>
+              </div>
+              <div class="card" data-places="europe">
+                <h4>Systems Administrator</h4>
+                <span class="italic">Cambridge</span>
+                <p>One Linux systems administrator wasn't enough for a global payment gateway. We recruited several.</p>
+              </div>
+              <div class="card" data-places="europe">
+                <h4>Unix Sysadmin</h4>
+                <span class="italic">Zurich</span>
+                <p>A Unix systems administrator for an American bank's Zurich operation, recruited by us.</p>
+              </div>
+              <div class="card" data-places="london europe">
+                <h4>Country Manager</h4>
+                <span class="italic">London, Berlin</span>
+                <p>A key employee at the world's largest mobile content creator was ready to move. We quietly brokered the switch to a global competitor.</p>
+              </div>
+              <div class="card" data-places="london">
+                <h4>Project Manager</h4>
+                <span class="italic">London</span>
+                <p>A trading and investment technology company wanted a search partner, not just a supplier, for its infrastructure project manager role.</p>
+              </div>
+              <div class="card" data-places="apac">
+                <h4>Infrastructure Engineer</h4>
+                <span class="italic">Tokyo</span>
+                <p>We found a network engineer with MPLS experience for a financial software house's Tokyo office.</p>
+              </div>
+              <div class="card" data-places="london europe apac">
+                <h4>MySQL DBA</h4>
+                <span class="italic">Tokyo, London, Amsterdam</span>
+                <p>Online travel, digital media, e-commerce, payments and FX trading firms all came to us for the same hard-to-find skill: MySQL database administrators.</p>
+              </div>
+              <div class="card" data-places="london">
+                <h4>Business Analyst</h4>
+                <span class="italic">London</span>
+                <p>We joined a paperless-trading startup in its early days, recruiting its business analyst and other key people.</p>
+              </div>
+              <div class="card" data-places="europe apac">
+                <h4>Remedy Developers</h4>
+                <span class="italic">Singapore, Germany, Austria, UK</span>
+                <p>Remedy developers, on contract and permanent, for several employers across four countries, including an investment bank.</p>
+              </div>
+              <div class="card" data-places="apac">
+                <h4>Service Delivery Manager</h4>
+                <span class="italic">Singapore</span>
+                <p>A trading firm's bonds trading project in Singapore came to us for its Service Delivery Manager.</p>
+              </div>
+              <div class="card" data-places="apac">
+                <h4>Sysadmin</h4>
+                <span class="italic">Singapore</span>
+                <p>An online travel company hired its Singapore sysadmin through us.</p>
+              </div>
+              <div class="card" data-places="europe">
+                <h4>First Line Support</h4>
+                <span class="italic">Luxembourg</span>
+                <p>First-line support that works in several languages, recruited for an international central securities depository.</p>
+              </div>
+              <div class="card" data-places="london">
+                <h4>CISO</h4>
+                <span class="italic">London</span>
+                <p>A distributed ledger technology firm had nowhere else to turn in its search for a CISO. We introduced them to the CISO they went on to hire.</p>
+              </div>
+              <div class="card" data-places="london apac">
+                <h4>Java Developers</h4>
+                <span class="italic">Tokyo, Hong Kong, London</span>
+                <p>A financial trading firm chose us to recruit multiple Java developers for its Tokyo, Hong Kong and London office.</p>
+              </div>
+              <div class="card" data-places="apac">
+                <h4>FX Client Services</h4>
+                <span class="italic">Sydney</span>
+                <p>A client services role in FX that also called for IT automation and development experience. We found someone who could do both.</p>
+              </div>
+              <div class="card" data-places="london">
+                <h4>Security Manager</h4>
+                <span class="italic">London</span>
+                <p>The right Security Manager for a financial SaaS company didn't come through HR. They came through us.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ================= PROFESSIONAL SERVICES ================= -->
+    <section id="professionalservices">
+
+      <div class="photo-bar about-pscase">
+        <div class="container">
+          <div class="photo-text"><span class="text-black-bg">we combine business knowledge</span><br><span class="text-black-bg">with technical know-how</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="container">
+          <h1>Professional Services</h1>
+          <p>With access to a team of consultants that have experience working across multiple industries, we combine business knowledge with technical know-how so as to ensure that our professional services always meet the needs of our client projects</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="container">
+          <h4>Our Skills</h4>
+          <div class="skills">
+            <ul>
+              <li>Business Analysis</li>
+              <li>Training</li>
+              <li>Design</li>
+            </ul>
+            <ul>
+              <li>Project Management</li>
+              <li>Software Development</li>
+              <li>Recruitment</li>
+            </ul>
+            <ul>
+              <li>Testing</li>
+              <li>Marketing</li>
+            </ul>
+            <ul>
+              <li>Documentation</li>
+              <li>Product Development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="professionalprocess">
+        <div class="photo-bar process">
+          <div class="container">
+            <div class="photo-text"><span class="text-black-bg">we deliver customer projects</span><br><span class="text-black-bg">through structured process</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="container">
+            <h1>Our Process</h1>
+            <p>Our consultants work out what the business needs, solve the problem, and help you plan the most efficient way to get there.</p>
+            <ol class="steps">
+              <li>
+                <h3>Discovery</h3>
+                <span class="italic">Uncovering purpose</span>
+                <p>We spend time with your team to understand the culture you're leading, then sketch ideas and work through your requirements in a series of planning sessions.</p>
+              </li>
+              <li>
+                <h3>Define</h3>
+                <span class="italic">Defining scope</span>
+                <p>We form our own view of your problem and help you reach the same one. Who is involved, what methods we'll use and how long the project will take: we settle those early.</p>
+              </li>
+              <li>
+                <h3>Delivery</h3>
+                <span class="italic">Delivering the work</span>
+                <p>Requirements, structure and strategy become real: built, tested and put into motion. Then the work passes to the people who will carry it forward.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div id="professionalservicescasestudies">
+        <div class="photo-bar case">
+          <div class="container">
+            <div class="photo-text"><span class="text-black-bg">we have history, but we hope</span><br><span class="text-black-bg">you will be part of our future</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="container">
+            <h1>Our team's experiencee</h1>
+            <div class="cards">
+              <div class="card">
+                <h4>Vendor Selection</h4>
+                <p>Provided project management and business analysis for front office systems, vendor selection process</p>
+              </div>
+              <div class="card">
+                <h4>Change Management</h4>
+                <p>Assisted to assess the impact of regulatory and strategic change on daily operational processes and procedures</p>
+              </div>
+              <div class="card">
+                <h4>Application Upgrades</h4>
+                <p>As business consultants, we have implemented numerous upgrades to financial accounting applications</p>
+              </div>
+              <div class="card">
+                <h4>IT Service Management</h4>
+                <p>Engaged to improve the client's existing service management system toolset in order to provide asset management functionality</p>
+              </div>
+              <div class="card">
+                <h4>Partnership Development</h4>
+                <p>Secured partnerships and contributed to product and brand development for a speech-recognition entertainment technology company</p>
+              </div>
+              <div class="card">
+                <h4>Marketing Consultancy</h4>
+                <p>Marketing advice for a startup that turns a group card and a whip-round for a gift into one simple online service</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ===================== GET IN TOUCH ===================== -->
+    <section id="getintouch">
+
+      <div class="photo-bar work-with">
+        <div class="container">
+          <div class="photo-text"><span class="text-black-bg">we'd love to hear from you,</span><br><span class="text-black-bg">so don't hesitate to give us a call</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="container">
+          <h1>Get in touch</h1>
+          <div class="cards">
+            <div class="card">
+              <h4>Registered Office</h4>
+              <span class="italic">as recorded by Companies House</span>
+              <p class="redacted" aria-hidden="true"><span>00 Xxxxxx Xxxxxx<br>Xxxxxx<br>XX0X 0XX<br>Xxxxxxx, XX</span></p>
+            </div>
+            <div class="card">
+              <h4>Telephone Number</h4>
+              <p class="redacted" aria-hidden="true"><span>+00 (0) 0000 000 000</span></p>
+            </div>
+            <div class="card">
+              <h4>Email Address</h4>
+              <p><a href="mailto:hello@camalyn.org">hello (at) camalyn.org</a></p>
+            </div>
+          </div>
+          <p class="archive-note">Archived site: address and phone number removed.</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="panel">
+    <div class="container">
+      <p>Registered in England &amp; Wales<br>Registration No. 6337993</p>
+    </div>
+  </footer>
+
+  <script>
+  /* Case study filter. Each card lists its places in data-places (e.g. "london europe"). */
+  (function () {
+    var bar = document.getElementById('case-filters');
+    if (!bar || bar.getAttribute('data-ready')) { return; }
+    bar.setAttribute('data-ready', '1');
+
+    var cards   = [].slice.call(document.querySelectorAll('#recruitmentcasestudies .card')),
+        buttons = [].slice.call(bar.querySelectorAll('button')),
+        status  = document.getElementById('case-filter-status');
+
+    function matches(card, filter) {
+      return filter === 'all' ||
+        (card.getAttribute('data-places') || '').split(' ').indexOf(filter) > -1;
+    }
+
+    function apply(filter) {
+      var shown = 0;
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-filter') === filter);
+      });
+      cards.forEach(function (card) {
+        var show = matches(card, filter);
+        card.hidden = !show;
+        if (show) {
+          shown++;
+          card.classList.remove('is-entering');
+          void card.offsetWidth;
+          card.classList.add('is-entering');
+        }
+      });
+      if (status) { status.textContent = 'Showing ' + shown + ' of ' + cards.length + ' case studies'; }
+    }
+
+    buttons.forEach(function (b) {
+      var filter = b.getAttribute('data-filter');
+      b.addEventListener('click', function () { apply(filter); });
+    });
+  }());
+  </script>
+  <script src="js/script.js?v=10"></script>
+</body>
+</html>
