@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>camalyn.</title>
+    <!-- Fonts -->    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+ <!-- Meta Tags -->
+  <meta name="description" content="camalyn. A collective shaped by global experience. Driven by insight and empathy, with quiet, precise work under tight timelines and high stakes—across industries from banking and startups to telecoms and trading firms. No theatre. Just the work. Never a solo act."/>
+  <meta name="author" content="camalyn."/>
+ <!-- <meta name="robots" content="noindex, nofollow"/>-->
+  
+  <link rel="canonical" href="https://www.camalyn.org"/>
+  
+  
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="camalyn."/>
+  <meta property="og:title" content="camalyn."/>
+  <meta property="og:description" content="camalyn. A collective shaped by global experience. Driven by insight and empathy, with quiet, precise work under tight timelines and high stakes—across industries from banking and startups to telecoms and trading firms. No theatre. Just the work. Never a solo act."/>
+  <meta property="og:image" content="https://www.camalyn.org/favicon/social-preview.png"/>
+  <meta property="og:url" content="https://www.camalyn.org"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image:secure_url" content="https://www.camalyn.org/favicon/social-preview.png"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="camalyn."/>
+  <meta name="twitter:description" content="camalyn. A collective shaped by global experience. Driven by insight and empathy, with quiet, precise work under tight timelines and high stakes—across industries from banking and startups to telecoms and trading firms. No theatre. Just the work. Never a solo act."/>
+  <meta name="twitter:image" content="https://www.camalyn.org/favicon/social-preview.png"/>
+
+  <!-- Standard ICO for all browsers -->
+<link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+
+<!-- SVG for modern vector-based rendering -->
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+
+<!-- PNGs for higher-resolution favicons -->
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="favicon/web-app-manifest-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="favicon/web-app-manifest-512x512.png" />
+
+<!-- Apple Touch Icon for iOS -->
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="camalyn." />
+
+<!-- Web App Manifest -->
+<link rel="manifest" href="favicon/site.webmanifest" />
+
+<!-- Schema.org Structured Data -->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "James Tobin",
+  "jobTitle": "Director",
+  "image": "https://www.camalyn.org/images/jamestobin.jpg",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "camalyn.",
+    "url": "https://www.camalyn.org",
+    "alternateName": "camalyn",
+    "description": "camalyn. A collective shaped by global experience. Driven by insight and empathy, with quiet, precise work under tight timelines and high stakes—across industries from banking and startups to telecoms and trading firms. No theatre. Just the work. Never a solo act."
+  }
+}
+</script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #000;
+      color: #ffffe0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      touch-action: none;
+      overscroll-behavior: none;
+      position: relative;
+    }
+
+    .tv-on {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      z-index: 9999;
+      animation: tvStartup 1s ease-out forwards;
+    }
+
+    @keyframes tvStartup {
+      0% {
+        opacity: 1;
+        transform: scaleY(0.01) scaleX(1.5);
+      }
+      50% {
+        transform: scaleY(1.2) scaleX(1.1);
+      }
+      100% {
+        opacity: 0;
+        transform: scaleY(1) scaleX(1);
+      }
+    }
+
+    video#bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .controls {
+      position: fixed;
+      top: calc(12px + env(safe-area-inset-top));
+      left: calc(12px + env(safe-area-inset-left));
+      z-index: 998;
+    }
+
+    #sentenceSlider {
+      width: 200px;
+      appearance: none;
+      height: 4px;
+      background: #ccc;
+      border-radius: 2px;
+      outline: none;
+      transition: background 0.3s;
+      display: block;
+    }
+
+    #sentenceSlider::-webkit-slider-thumb {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      background: #ffffe0;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 2px #000;
+    }
+
+    #sentenceSlider::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      background: #ffffe0;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 2px #000;
+    }
+
+    .logo-top-right {
+      position: fixed;
+      top: calc(12px + env(safe-area-inset-top));
+      right: calc(12px + env(safe-area-inset-right));
+      z-index: 999;
+      display: none;
+    }
+
+    .logo-top-right img {
+      height: clamp(80px, 10vw, 220px);
+      width: auto;
+    }
+
+    .fade-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: normal;
+      opacity: 0;
+      text-align: center;
+      max-width: 90vw;
+      transition: opacity 1.5s ease;
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+
+   .fade-text.brand {
+  font-weight: normal;
+      opacity: 0;
+      text-align: center;
+      max-width: 90vw;
+      transition: opacity 1.5s ease;
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      line-height: 1.4;
+      white-space: pre-wrap;
+}
+    
+    
+
+    .fade-in {
+      opacity: 1;
+    }
+    /* Archive overlay */
+    #archiveList, #archiveView {
+      display: none;
+      position: fixed;
+      top: 0; right: 0; bottom: 0; left: 0;
+      color: #ffffe0;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    #archiveList {
+      z-index: 10002;
+      background: rgba(0, 0, 0, 0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #archiveView {
+      z-index: 10003;
+      background: #000;
+      flex-direction: column;
+    }
+    .arc-btn {
+      background: none;
+      border: 0;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      padding: 0.75rem 1rem;
+    }
+    .arc-btn:focus-visible, #archiveList a:focus-visible {
+      outline: 1px solid #ffffe0;
+      outline-offset: 3px;
+    }
+    #archiveList .arc-back {
+      position: absolute;
+      top: calc(12px + env(safe-area-inset-top));
+      left: calc(12px + env(safe-area-inset-left));
+      font-size: 1.25rem;
+    }
+    #archiveList ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      line-height: 2;
+    }
+    #archiveList li { display: flex; gap: 1.25rem; }
+    .arc-num { min-width: 3.5rem; text-align: right; }
+    .arc-dim { opacity: 0.3; }
+    #archiveList a { color: inherit; text-decoration: none; }
+    #archiveList a:hover { text-decoration: underline; }
+
+    .arc-bar {
+      flex: 0 0 auto;
+      box-sizing: border-box;
+      height: calc(2.75rem + env(safe-area-inset-top));
+      padding: env(safe-area-inset-top) 0.5rem 0 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #000;
+      border-bottom: 1px solid #333;
+      font-size: 1.1rem;
+    }
+    .arc-bar .arc-btn { padding: 0.5rem 0.75rem; }
+    #archiveLabel { opacity: 0.6; padding-right: 0.75rem; }
+    #archiveFrame {
+      flex: 1 1 auto;
+      width: 100%;
+      border: 0;
+      background: #fff;
+    }
+  </style>
+
+  </head>
+
+<body>
+  <div class="tv-on"></div>
+
+  <!-- 
+  NOTE: This tiny 1-frame MP4 is intentionally included.
+
+  Why this exists:
+  - Safari & iOS will not allow a <video> element to autoplay unless it has a
+    valid playable source.
+  - Leaving <source src=""> causes video.play() to fail, which then breaks the
+    TV startup animation, the timing of the fade-text sequence, and parts of 
+    your JS that rely on the video promise resolving.
+  - This base64-encoded MP4 is a real 1-frame, silent video. It loads instantly,
+    makes the browser happy, and adds zero visual or performance cost.
+
+  Result:
+  - bgVideo.play() succeeds on all browsers (Chrome, Safari, iOS, Firefox, Edge).
+  - Your intro animation and text transitions stay perfectly in sync.
+  - No external file requests, no errors in console, no flashing or glitches.
+-->
+
+<video id="bgVideo"
+       autoplay
+       muted
+       loop
+       playsinline
+       preload="auto"
+       style="display:none;">
+  <source 
+    type="video/mp4"
+    src="data:video/mp4;base64,AAAAHGZ0eXBpc29tAAAAAGlzb21pc28yYXZjMQAAAAhmcmVlAAAAG21kYXQhEAUAAAAgAAABAAEAAAEAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGG1vb3YAAABsbXZoZAAAAAB8AQAAXwEAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAACAAACjYWR0YQAAAAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAc291bmQAAAAAAAAAAAAAAAACAAACc2R0YQAAAFxzdHNkAAAAAAAAAAEAAAD//wAAABRzdHNmAAAAAAAAAAEAAAAkAAAAEHRyZWYAAAAAAAAAAQAAAA0AAAALdXJsIC0gZGF0YTo="
+  />
+</video>
+  
+
+
+  <div class="controls" id="sliderControls" style="display: none;">
+    <input type="range" id="sentenceSlider" min="0" max="9" value="0" step="1" />
+  </div>
+
+<div class="logo-top-right"
+     id="logoContainer"
+     role="button"
+     tabindex="0"
+     aria-label="Open contact overlay">
+  <img src="images/logo.png" alt="" aria-hidden="true">
+</div>
+  
+<!-- Fullscreen image overlay -->
+<div id="imageOverlay" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #ffffe0;
+  padding: 0;
+  box-sizing: border-box;
+">
+
+  <!-- Contact Box Positioned at Bottom Left (Responsive) -->
+  <div id="contactBox" style="
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    transform: scale(0.98);
+    transition: transform 0.6s ease;
+    max-width: 300px;
+    line-height: 1.6;
+    font-size: 1.25rem; /* Default font size */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    z-index: 10001;
+  ">
+    <p style="margin: 0 0 0.5rem;">camalyn.</p>
+<p style="margin: 0;">
+  c/o <a href="images/jamestobin.jpg" 
+        style="color: inherit; text-decoration: underline; cursor: pointer;"
+        onclick="event.preventDefault();
+                 const img = new Image();
+                 img.src = this.href;
+                 const lightbox = document.createElement('div');
+                 lightbox.style.position = 'fixed';
+                 lightbox.style.top = 0;
+                 lightbox.style.left = 0;
+                 lightbox.style.width = '100%';
+                 lightbox.style.height = '100%';
+                 lightbox.style.background = 'rgba(0,0,0,0.8)';
+                 lightbox.style.display = 'flex';
+                 lightbox.style.justifyContent = 'center';
+                 lightbox.style.alignItems = 'center';
+                 lightbox.style.cursor = 'pointer';
+                 img.style.maxWidth = '90%';
+                 img.style.maxHeight = '90%';
+                 lightbox.appendChild(img);
+                 lightbox.onclick = () => {
+                   document.body.removeChild(lightbox);
+                   // Open contact overlay
+                   const imageOverlay = document.getElementById('imageOverlay');
+                   if (imageOverlay) {
+                     imageOverlay.style.display = 'flex'; // assuming flex for centering
+                   } else {
+                     alert('Contact overlay not found!');
+                   }
+                 };
+                 document.body.appendChild(lightbox);">
+    James Tobin
+  </a>
+</p>  <p style="margin: 0;">124 City Road</p>
+    <p style="margin: 0;">London</p>
+    <p style="margin: 0;">England</p>
+    <p style="margin: 0;">EC1V 2NX</p>
+    <p style="margin: 0.5rem 0 0;">
+      <a href="mailto:hello@camalyn.org" style="color: #ffffe0; text-decoration: underline;">hi@camalyn.org</a>
+    </p> 
+
+    <p style="margin: 0.5rem 0 0;">
+      <a href="https://www.camalyn.org/docs/quietalignments.pdf" style="color: #ffffe0; text-decoration: underline;">quiet alignments →</a>
+    </p> 
+
+    <p style="margin: 0.5rem 0 0;">
+      <a href="#" id="archiveLink" style="color: #ffffe0; text-decoration: underline;">archive →</a>
+    </p>
+
+    </div>
+
+</div>  
+
+<script>
+  const contactBox = document.getElementById('contactBox');
+
+  // Function to adjust the contact box based on orientation
+  function adjustContactBox() {
+    // Get the window width and height
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    // Check if the device is in landscape mode
+    const isLandscape = width > height;
+
+    // Adjust font size dynamically
+    if (isLandscape) {
+      contactBox.style.fontSize = 'clamp(0.8rem, 3vw, 1rem)';  // Smaller font in landscape
+    } else {
+      contactBox.style.fontSize = 'clamp(1rem, 4vw, 1.25rem)';  // Larger font in portrait
+    }
+
+    // Ensure contact box stays at the bottom of the screen
+    contactBox.style.bottom = '24px';  // Make sure it's fixed at the bottom
+    contactBox.style.left = '24px';    // Make sure it's aligned to the left
+  }
+
+  // Listen for window resize or orientation changes
+  window.addEventListener('resize', adjustContactBox);
+  window.addEventListener('orientationchange', adjustContactBox);
+
+  // Run on initial page load to adjust immediately
+  window.onload = adjustContactBox;
+
+</script>
+
+<div id="archiveList" role="dialog" aria-modal="true" aria-label="Archive">
+  <button type="button" class="arc-btn arc-back" id="archiveListBack">← camalyn.</button>
+  <ol>
+    <li class="arc-dim"><span class="arc-num">i.</span><span aria-label="not available">…</span></li>
+    <li class="arc-dim"><span class="arc-num">ii.</span><span aria-label="not available">…</span></li>
+    <li><span class="arc-num">iii.</span><a href="#" data-archive="iii" aria-label="Open archived version iii">→</a></li>
+    <li><span class="arc-num">iv.</span><a href="#" data-archive="iv" aria-label="Open archived version iv">→</a></li>
+  </ol>
+</div>
+
+<div id="archiveView" role="dialog" aria-modal="true" aria-label="Archived version">
+  <div class="arc-bar">
+    <button type="button" class="arc-btn" id="archiveViewBack">← archive</button>
+    <span id="archiveLabel"></span>
+  </div>
+  <iframe id="archiveFrame" title="Archived version of the camalyn website" src="about:blank"></iframe>
+</div>
+
+  <div id="fadeText" class="fade-text"></div>
+
+  <audio id="backgroundMusic" src="" preload="auto"></audio>
+
+  <script>
+    const fadeText = document.getElementById('fadeText');
+    const sentenceSlider = document.getElementById('sentenceSlider');
+    const bgVideo = document.getElementById('bgVideo');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    const logoContainer = document.getElementById('logoContainer');
+    const overlay = document.getElementById('imageOverlay');
+
+const sentences = [
+  "Refined across borders",
+  "Driven by insight + empathy",
+  "Precision, always",
+  "When time was tight",
+  "And stakes were high",
+  "We rose to meet ambitions",
+  "No theatre. Just the work",
+  "Never a solo act",
+  "Always a collective",
+  "We are camalyn."
+];
+
+    const noteFrequencies = {
+      0: 261.63,   // C4
+      1: 523.25,   // C5
+      2: 261.63,   // C4
+      3: 130.81,   // C3
+      4: 261.63,   // C4
+      5: 523.25,   // C5
+      6: 1046.50,  // C6
+      7: 261.63,   // C4
+      8: 523.25,   // C5
+      9: 130.81    // C3
+    };
+
+    let currentIndex = 0;
+    let autoAdvanceTimeout;
+    let sliderChangedByUser = false;
+    let isPlaying = true;
+    let overlayActive = false;
+
+    function playNote(frequency, duration = 500) {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioCtx.createOscillator();
+      const gainNode = audioCtx.createGain();
+
+      oscillator.type = 'sine';
+      oscillator.frequency.setValueAtTime(frequency, audioCtx.currentTime);
+
+      gainNode.gain.setValueAtTime(0.02, audioCtx.currentTime);
+      oscillator.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+
+      oscillator.start();
+      oscillator.stop(audioCtx.currentTime + duration / 1000);
+
+      oscillator.onended = () => {
+        audioCtx.close();
+      };
+    }
+
+    function fadeOut(element, duration = 1500, callback) {
+      element.style.transition = `opacity ${duration}ms ease`;
+      element.style.opacity = 0;
+      setTimeout(() => {
+        if (callback) callback();
+      }, duration);
+    }
+
+    function fadeIn(element, duration = 1500, callback) {
+      element.style.transition = `opacity ${duration}ms ease`;
+      element.style.opacity = 1;
+      setTimeout(() => {
+        if (callback) callback();
+      }, duration);
+    }
+
+    function showSentence(index) {
+      clearTimeout(autoAdvanceTimeout);
+
+      // Play tone only on the last sentence (camalyn.)
+      if (index === sentences.length - 1) {
+    //    playNote(noteFrequencies[index], 1000);
+      }
+
+      if (index === sentences.length - 1) {
+        // Last sentence
+        fadeText.classList.add('brand');
+      //  logoContainer.style.display = 'none';
+        fadeText.style.opacity = 0;
+        fadeText.innerHTML = "We are <i>camalyn.</i>";
+        fadeIn(fadeText, 1500);
+      //   setTimeout(() => {
+ //     location.reload();
+  //  }, 8000);
+        
+      } else {
+        // Normal sentences
+
+
+        // Show the slider only when the first sentence is shown
+        if (index === 0) {
+          const sliderControls = document.getElementById('sliderControls');
+          sliderControls.style.display = 'block';
+        }
+
+        fadeText.classList.remove('brand');
+        fadeText.style.opacity = 0;
+        fadeText.innerHTML = sentences[index];
+        logoContainer.style.display = 'inline-flex';
+
+
+        if (!sliderChangedByUser) {
+          sentenceSlider.value = index;
+        }
+        sliderChangedByUser = false;
+
+        fadeIn(fadeText, 1500);
+
+        autoAdvanceTimeout = setTimeout(() => {
+  fadeOut(fadeText, 1500, () => {
+    fadeText.innerHTML = '';
+    if (isPlaying && !overlayActive) {
+      currentIndex++;
+      if (currentIndex >= sentences.length) {
+        currentIndex = sentences.length - 1;
+      }
+      // Force the slider to update with the content
+      sentenceSlider.value = currentIndex;
+      showSentence(currentIndex);
+    }
+  });
+}, 5000);
+      }
+    }
+
+    sentenceSlider.addEventListener('input', (e) => {
+      const newIndex = parseInt(e.target.value, 10);
+      if (newIndex >= 0 && newIndex < sentences.length) {
+        currentIndex = newIndex;
+        sliderChangedByUser = true;
+        isPlaying = true; // Resume auto-play after slider change
+        showSentence(currentIndex);
+      }
+    });
+
+    window.onload = () => {
+      setTimeout(() => {
+        document.querySelector('.tv-on').style.display = 'none';
+
+        bgVideo.volume = 0.5;
+        bgVideo.muted = true;
+        bgVideo.play().catch(() => {});
+
+        backgroundMusic.volume = 0.5;
+        backgroundMusic.loop = false;
+
+        // Show the logo
+        logoContainer.style.display = 'inline-flex';
+
+        // THEN delay before showing the first sentence
+        setTimeout(() => {
+          currentIndex = 0;
+          isPlaying = true;
+          showSentence(currentIndex);
+        }, 300); // Delay sentence by 2s after logo is visible
+
+        // Show slider right away
+        sentenceSlider.max = sentences.length - 1;
+        sentenceSlider.value = currentIndex;
+      }, 1000); // Delay for TV startup effect
+    };
+
+    window.addEventListener('resize', () => {
+      document.body.style.height = `${window.innerHeight}px`;
+    });
+
+    // Overlay open/close logic with pause/resume
+
+      const logo = document.getElementById('logoContainer');
+
+    // CLICK to open overlay
+    logo.addEventListener('click', () => {
+      playNote(noteFrequencies[9], 1000);  // Play C4 note on click
+      overlay.style.display = 'flex';
+      overlayActive = true;
+      isPlaying = false;
+      clearTimeout(autoAdvanceTimeout);
+    });
+
+    // KEYBOARD accessibility: Enter or Space should also open overlay
+    logo.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        logo.click();   // Trigger the same logic as a mouse click
+      }
+    });
+
+    // CLICK anywhere on overlay to close
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      overlayActive = false;
+      isPlaying = true;
+      showSentence(currentIndex);
+    });
+</script>
+
+<script>
+  // Track touch start & end coordinates for swipe detection
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  });
+
+  document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleGesture();
+  });
+
+  function handleGesture() {
+    const threshold = 50; // minimum swipe distance
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      // Horizontal swipe
+      if (deltaX > threshold) {
+        // Swiped right: go backward
+        advanceSentence(-1);
+      } else if (deltaX < -threshold) {
+        // Swiped left: go forward
+        advanceSentence(1);
+      }
+    } else {
+      // Vertical swipe
+      if (deltaY > threshold) {
+        // Swiped down: go backward
+        advanceSentence(-1);
+      } else if (deltaY < -threshold) {
+        // Swiped up: go forward
+        advanceSentence(1);
+      }
+    }
+  }
+
+  // Optional: Scroll gesture (trackpad or wheel)
+  let scrollDebounce = false;
+
+  window.addEventListener('wheel', (e) => {
+    if (overlayActive) return;
+    if (scrollDebounce) return;
+
+    scrollDebounce = true;
+    setTimeout(() => scrollDebounce = false, 400); // prevent rapid scrolls
+
+    if (e.deltaY > 0 || e.deltaX > 0) {
+      advanceSentence(1); // scroll down/right = forward
+    } else {
+      advanceSentence(-1); // scroll up/left = backward
+    }
+  });
+
+  function advanceSentence(direction) {
+    if (overlayActive) return;
+    const newIndex = currentIndex + direction;
+
+    if (newIndex >= 0 && newIndex < sentences.length) {
+      currentIndex = newIndex;
+      sliderChangedByUser = true;
+      isPlaying = true;
+
+      // 🧠 Move the slider to match the sentence
+      sentenceSlider.value = currentIndex;
+
+      showSentence(currentIndex);
+    }
+  }
+</script>
+
+<script>
+/*
+  Force #fadeText to sit exactly in the visible middle of the screen
+  Works with orientation changes, visualViewport (soft keyboard / mobile browser UI),
+  content changes, animation fades, and resize events.
+*/
+
+(function() {
+  const el = document.getElementById('fadeText');
+  if (!el) return;
+
+  // Ensure predictable layout for measuring
+  el.style.position = 'fixed';
+  el.style.left = '0px';
+  el.style.top = '0px';
+  el.style.transform = 'none'; // we position by px values
+  el.style.willChange = 'top, left';
+
+  // If you want a smooth reposition on change, adjust this; otherwise keep instant:
+  const ANIM_DURATION = 180; // ms, 0 to disable
+  if (ANIM_DURATION > 0) {
+    el.style.transition = `top ${ANIM_DURATION}ms ease, left ${ANIM_DURATION}ms ease`;
+  }
+
+  // Utility: get the visible viewport rectangle (works better on mobile)
+  function getViewportRect() {
+    if (window.visualViewport) {
+      const vv = window.visualViewport;
+      // visualViewport provides width/height and offsets for on-screen area
+      return {
+        left: vv.offsetLeft || 0,
+        top: vv.offsetTop || 0,
+        width: vv.width,
+        height: vv.height
+      };
+    }
+    // fallback
+    return {
+      left: 0,
+      top: 0,
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+  }
+
+  // Centering function: measure element then place it in center of visible viewport
+  function centerElement() {
+    // If element is display:none, measuring will be zero — bail out
+    const style = getComputedStyle(el);
+    if (style.display === 'none' || style.visibility === 'hidden') return;
+
+    // Temporarily make it visible and unflowed for correct measurement if necessary
+    // (we assume your element is normally visible when centering is desired)
+    // Measure bounding box
+    const rect = el.getBoundingClientRect();
+
+    // If size is 0 (maybe not yet rendered), attempt to force a reflow by toggling opacity
+    if (rect.width === 0 && rect.height === 0) {
+      // small timeout to let browser render (rare)
+      requestAnimationFrame(() => {
+        const r2 = el.getBoundingClientRect();
+        performPlacement(r2);
+      });
+      return;
+    }
+
+    performPlacement(rect);
+  }
+
+  function performPlacement(rect) {
+    const vp = getViewportRect();
+
+    // Compute center positions relative to document root
+    // We'll place top/left so that the element's bounding box is centered inside the viewport.
+    const targetLeft = Math.round(vp.left + (vp.width - rect.width) / 2);
+    const targetTop  = Math.round(vp.top  + (vp.height - rect.height) / 2);
+
+    // Apply positions (use transform translate if you prefer subpixel centering)
+    el.style.left = targetLeft + 'px';
+    el.style.top = targetTop + 'px';
+  }
+
+  // Debounce helper
+  let raf = null;
+  function scheduleCenter() {
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      centerElement();
+      raf = null;
+    });
+  }
+
+  // Recenter when:
+  // - window resizes
+  // - visualViewport changes (mobile, on-screen keyboard, chrome hide/show)
+  // - orientation changes
+  // - the text content/layout changes (observe size changes)
+  window.addEventListener('resize', scheduleCenter, {passive: true});
+  window.addEventListener('orientationchange', scheduleCenter, {passive: true});
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', scheduleCenter, {passive: true});
+    window.visualViewport.addEventListener('scroll', scheduleCenter, {passive: true});
+  }
+
+  // ResizeObserver to detect changes to the element's size (multi-line wraps, font load)
+  let ro;
+  if (window.ResizeObserver) {
+    ro = new ResizeObserver(scheduleCenter);
+    ro.observe(el);
+  } else {
+    // fallback: periodically check size (rare older browsers)
+    let lastRect = el.getBoundingClientRect();
+    setInterval(() => {
+      const r = el.getBoundingClientRect();
+      if (r.width !== lastRect.width || r.height !== lastRect.height) {
+        lastRect = r;
+        scheduleCenter();
+      }
+    }, 300);
+  }
+
+  // Also observe mutations that might change inner text (class toggles / brand class changes)
+  const mo = new MutationObserver(scheduleCenter);
+  mo.observe(el, { childList: true, subtree: true, characterData: true, attributes: true });
+
+  // Run once after fonts and initial load
+  function onLoadReady() {
+    // Small stagger to let fonts and first paint settle
+    setTimeout(scheduleCenter, 60);
+    // Extra calls to ensure final centering after your fade-in animations
+    setTimeout(scheduleCenter, 600);
+    setTimeout(scheduleCenter, 1200);
+  }
+
+  if (document.readyState === 'complete') {
+    onLoadReady();
+  } else {
+    window.addEventListener('load', onLoadReady);
+  }
+
+  // Public debug hook (optional)
+  window.__centerFadeText = scheduleCenter;
+})();
+</script>
+
+<script>
+(function () {
+  var list     = document.getElementById('archiveList'),
+      view     = document.getElementById('archiveView'),
+      frame    = document.getElementById('archiveFrame'),
+      label    = document.getElementById('archiveLabel'),
+      trigger  = document.getElementById('archiveLink'),
+      listBack = document.getElementById('archiveListBack'),
+      viewBack = document.getElementById('archiveViewBack'),
+      root = document.documentElement,
+      body = document.body,
+      lastLink = null,
+      token = 0;                          /* ignores a slow load if the user has moved on */
+
+  if (!list || !view || !trigger) return;
+
+  /* The page sets touch-action:none on html/body, which can stop touch
+     scrolling inside the frame on phones. Lift it while a version is open. */
+  function touchScroll(on) {
+    var v = on ? 'auto' : '';
+    root.style.touchAction = v;
+    body.style.touchAction = v;
+  }
+
+  /* Reads an archived page as text, tells it where its own folder is
+     (so css/js/images still load), and renders it in the frame.
+     If anything fails, it falls back to a plain frame address. */
+  function loadPage(url) {
+    var abs = new URL(url, location.href).href,
+        mine = ++token;
+
+    fetch(abs, { credentials: 'same-origin' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.text();
+      })
+      .then(function (html) {
+        if (mine !== token) return;
+        var base = '<base href="' + abs + '">';
+        if (/<head[^>]*>/i.test(html)) {
+          html = html.replace(/<head[^>]*>/i, function (m) { return m + base; });
+        } else {
+          html = base + html;
+        }
+        frame.onload = function () { hook(abs); };
+        frame.removeAttribute('src');
+        frame.srcdoc = html;
+      })
+      .catch(function () {
+        if (mine !== token) return;
+        frame.onload = null;
+        frame.removeAttribute('srcdoc');
+        frame.src = abs;                  /* fallback: plain frame */
+      });
+  }
+
+  /* Catches clicks inside the rendered page so nothing leaves your page */
+  function hook(pageUrl) {
+    var doc;
+    try { doc = frame.contentDocument; } catch (e) { return; }
+    if (!doc) return;
+
+    doc.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a') : null;
+      if (!a || e.defaultPrevented) return;
+      var href = a.getAttribute('href');
+      if (!href) return;
+
+      /* jump within the same page (#contact etc.) */
+      if (href.charAt(0) === '#') {
+        e.preventDefault();
+        var id = decodeURIComponent(href.slice(1)),
+            el = id ? doc.getElementById(id) : doc.body;
+        if (el) el.scrollIntoView();
+        return;
+      }
+
+      /* mail and phone links work as normal */
+      if (/^(mailto|tel):/i.test(href)) return;
+
+      var u;
+      try { u = new URL(href, pageUrl); } catch (err) { return; }
+      e.preventDefault();
+
+      /* pages inside the archive load in the same frame */
+      var inArchive = u.origin === location.origin &&
+                      u.pathname.indexOf('/archive/') > -1 &&
+                      /(\.html?|\/)$/i.test(u.pathname);
+      if (inArchive) {
+        loadPage(u.href.split('#')[0]);
+        return;
+      }
+
+      /* anything else opens in a new tab */
+      window.open(u.href, '_blank', 'noopener');
+    });
+
+    doc.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeView();
+    });
+  }
+
+  function openList() {
+    list.style.display = 'flex';
+    listBack.focus();
+  }
+  function closeList() {
+    list.style.display = 'none';
+    trigger.focus();
+  }
+  function openView(key, link) {
+    lastLink = link;
+    label.textContent = key + ' \u00b7 archived version';
+    view.style.display = 'flex';
+    touchScroll(true);
+    loadPage('archive/' + key + '/index.html');
+    viewBack.focus();
+  }
+  function closeView() {
+    token++;
+    view.style.display = 'none';
+    frame.onload = null;
+    frame.removeAttribute('srcdoc');
+    frame.src = 'about:blank';            /* stops the old slideshow running */
+    touchScroll(false);
+    if (lastLink) lastLink.focus();
+  }
+
+  /* stopPropagation: the contact overlay closes on any click inside it */
+  trigger.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    openList();
+  });
+
+  listBack.addEventListener('click', closeList);
+  viewBack.addEventListener('click', closeView);
+
+  [].forEach.call(list.querySelectorAll('a[data-archive]'), function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      openView(a.getAttribute('data-archive'), a);
+    });
+  });
+
+  /* Esc steps back one level: version -> list -> contact overlay */
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (view.style.display === 'flex') { closeView(); }
+    else if (list.style.display === 'flex') { closeList(); }
+  });
+})();
+</script>
+
+</body>
+</html>
